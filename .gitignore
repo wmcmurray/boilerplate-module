@@ -1,0 +1,7 @@
+node_modules
+package-lock.json
+npm-debug.log*
+
+# @TODO temporary, remove when my project goes public
+dist/*.js
+docs/dist/*.js

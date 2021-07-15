@@ -1,0 +1,31 @@
+{
+  "name": "boilerplate-module",
+  "version": "0.1.0",
+  "description": "",
+  "main": "dist/bundle.cjs.js",
+  "module": "dist/bundle.esm.js",
+  "private": true,
+  "scripts": {
+    "build": "rollup -c rollup.config.prod.js",
+    "dev": "npm run dev-server & npm run dev-rollup",
+    "dev-rollup": "rollup -c rollup.config.dev.js -w",
+    "dev-server": "http-server ./docs/ --silent -c-1 -o /index.html"
+  },
+  "files": [
+    "dist"
+  ],
+  "type": "module",
+  "author": "William McMurray",
+  "license": "ISC",
+  "devDependencies": {
+    "@rollup/plugin-alias": "^3.1.2",
+    "@rollup/plugin-commonjs": "^19.0.0",
+    "@rollup/plugin-node-resolve": "^13.0.0",
+    "http-server": "^0.12.3",
+    "rollup": "^2.50.4",
+    "rollup-plugin-terser": "^7.0.2"
+  },
+  "peerDependencies": {
+    "lodash": "^4.17.21"
+  }
+}
