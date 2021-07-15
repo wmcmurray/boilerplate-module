@@ -1,8 +1,5 @@
-import alias from '@rollup/plugin-alias'
-import commonjs from '@rollup/plugin-commonjs'
-import resolve from '@rollup/plugin-node-resolve'
-import { terser } from 'rollup-plugin-terser'
-import pkg from './package.json'
+import plugins from './rollup.plugins.js'
+import pkg from '../package.json'
 
 const peerDependencies = Object.keys(pkg.peerDependencies);
 
@@ -31,16 +28,7 @@ export default {
       format: 'es',
     },
   ],
-  plugins: [
-    alias({
-      entries: [
-        { find: 'SRC', replacement: './src' },
-      ]
-    }),
-    commonjs(),
-    resolve(),
-    terser(),
-  ],
+  plugins: plugins,
   external: function(id) {
     return peerDependencies.indexOf(id) !== -1 || /lodash/.test(id);
   },

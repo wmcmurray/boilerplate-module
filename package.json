@@ -6,10 +6,12 @@
   "module": "dist/bundle.esm.js",
   "private": true,
   "scripts": {
-    "build": "rollup -c rollup.config.prod.js",
-    "dev": "npm run dev-server & npm run dev-rollup",
-    "dev-rollup": "rollup -c rollup.config.dev.js -w",
-    "dev-server": "http-server ./docs/ --silent -c-1 -o /index.html"
+    "build": "npm run build-dist & npm run build-docs",
+    "build-dist": "NODE_ENV=prod rollup -c build/rollup.config.dist.js",
+    "build-docs": "NODE_ENV=prod rollup -c build/rollup.config.docs.js",
+    "dev": "npm run dev-server & npm run dev-docs",
+    "dev-server": "http-server ./docs/ --silent -c-1 -o /index.html",
+    "dev-docs": "NODE_ENV=dev rollup -c build/rollup.config.docs.js -w"
   },
   "files": [
     "dist"
