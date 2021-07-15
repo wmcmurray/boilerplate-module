@@ -1,6 +1,7 @@
 import alias from '@rollup/plugin-alias'
 import commonjs from '@rollup/plugin-commonjs'
 import resolve from '@rollup/plugin-node-resolve'
+import vue from 'rollup-plugin-vue'
 import { terser } from 'rollup-plugin-terser'
 import env from './rollup.env.js'
 
@@ -13,6 +14,7 @@ const plugins = [
   }),
   commonjs(),
   resolve(),
+  vue(),
 ];
 
 // production only plugins

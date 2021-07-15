@@ -5,7 +5,7 @@ const PATH_SEP = '/';
 let vendorName;
 
 export default {
-  input: 'src/index.js',
+  input: 'docs/index.js',
   output: {
     dir: 'docs/dist/',
     format: 'es',

@@ -1,3 +1,3 @@
 # boilerplate-module :package:
 
-This is a basic setup for creating any ES6 module.
+This is a basic setup for creating a VueJS component ES6 module.
