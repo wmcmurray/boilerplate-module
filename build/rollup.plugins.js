@@ -8,8 +8,11 @@ import env from './rollup.env.js'
 const plugins = [
   alias({
     entries: [
-      { find: 'SRC', replacement: './src' },
-    ]
+      {
+        find: 'SRC',
+        replacement: './src',
+      },
+    ],
   }),
   commonjs(),
   resolve(),
